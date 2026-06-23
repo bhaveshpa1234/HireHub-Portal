@@ -1,13 +1,18 @@
 import asyncio
+import os
+
+from dotenv import load_dotenv
 from motor.motor_asyncio import AsyncIOMotorClient
 
-url = "mongodb+srv://admin:nScH4tyoRN1CSjRv@cluster0.gf81tdr.mongodb.net/?appName=Cluster0"
+load_dotenv()
+
+url = os.getenv("MONGO_URL")
 
 async def test():
     try:
         print("Attempting to connect...")
         client = AsyncIOMotorClient(url, serverSelectionTimeoutMS=5000)
-        res = await client.admin.command('ping')
+        res = await client.admin.command("ping")
         print("Successfully Connected! Ping Response:", res)
     except Exception as e:
         print("\n--- CONNECTION FAILED ---")

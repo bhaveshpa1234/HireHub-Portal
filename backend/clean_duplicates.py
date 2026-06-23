@@ -1,7 +1,11 @@
 from pymongo import MongoClient
+from dotenv import load_dotenv
 import certifi
+import os
 
-MONGO_URL = "mongodb+srv://admin:admin@cluster0.gf81tdr.mongodb.net/smart_internship1?retryWrites=true&w=majority"
+load_dotenv()
+
+MONGO_URL = os.getenv("MONGO_URL")
 
 client = MongoClient(MONGO_URL, tls=True, tlsCAFile=certifi.where())
 db = client["smart_internship1"]
