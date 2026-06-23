@@ -1,0 +1,47 @@
+# Node.js dependencies
+node_modules/
+my-app/node_modules/
+
+# React build
+my-app/build/
+my-app/dist/
+
+# Python virtual environment
+backend/venv/
+backend/env/
+backend/.venv/
+
+# Python cache
+backend/__pycache__/
+backend/*.pyc
+
+# Environment variables
+.env
+backend/.env
+my-app/.env
+
+# Logs
+*.log
+
+# IDE files
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# MongoDB data (if local)
+data/
+mongodb-data/
+
+# Coverage
+coverage/
+
+# Temporary files
+*.tmp
+
+# Archives
+*.zip
+*.tar
+*.zst
